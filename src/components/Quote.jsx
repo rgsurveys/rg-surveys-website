@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react'
 import emailjs from 'emailjs-com'
 
-const SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID'
-const TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID'
-const PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY'
+const SERVICE_ID = 'service_tebbp2b'
+const TEMPLATE_ID = 'template_9lmgupm'
+const PUBLIC_KEY = 'Kvb_o_K93uaQ7-QXg'
 
 export default function Quote() {
   const form = useRef()
