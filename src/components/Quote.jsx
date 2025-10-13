@@ -41,8 +41,8 @@ export default function Quote(){
 
   const handleSend = async (e) => {
     e.preventDefault()
-    //** TEMPORARY COMMENT**if(!polygonRef.current){
-      //setStatus({type:'error', text:'Please draw/select an area on the map first.'})
+    if(!polygonRef.current){
+      setStatus({type:'error', text:'Please draw/select an area on the map first.'})
       return
     }
     // collect polygon coordinates
