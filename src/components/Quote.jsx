@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser'
 
 export default function Quote(){
   const mapRef = useRef(null)
