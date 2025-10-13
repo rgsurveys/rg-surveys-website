@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { background: #f9f9f9; font-family: 'Poppins', sans-serif; }
+.header-shadow { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+.logo-img { height: 56px; }
