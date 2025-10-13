@@ -43,7 +43,7 @@ export default function Quote(){
     e.preventDefault()
     //** TEMPORARY COMMENT**if(!polygonRef.current){
       //setStatus({type:'error', text:'Please draw/select an area on the map first.'})
-      //return
+      return
     }
     // collect polygon coordinates
     let path = []
