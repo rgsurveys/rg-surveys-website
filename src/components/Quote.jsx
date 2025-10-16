@@ -73,7 +73,7 @@ export default function Quote(){
     try{
       // Replace SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY with your EmailJS values
       const SERVICE_ID = 'service_tebbp2b'
-      const TEMPLATE_ID = 'template_s6dw4ie'
+      const TEMPLATE_ID = 'template_9lmgupm'
       const PUBLIC_KEY = 'Kvb_o_K93uaQ7-QXg'
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       setStatus({type:'success', text:'Quote request sent — we will contact you shortly.'})
