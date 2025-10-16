@@ -17,7 +17,6 @@ export default function Navbar(){
           </div>
         </div>
         <nav className="flex gap-4 items-center">
-          <button className="hover:text-amber" onClick={()=>scrollToId('home')}>Home</button>
           <button className="hover:text-amber" onClick={()=>scrollToId('services')}>Services</button>
           <button className="hover:text-amber" onClick={()=>scrollToId('quote')}>Get a Quote</button>
           <button className="hover:text-amber" onClick={()=>scrollToId('contact')}>Contact</button>
