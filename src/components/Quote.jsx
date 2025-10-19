@@ -41,6 +41,28 @@ export default function Quote(){
     })
   },[])
 
+  const generateKML = (coords) => {
+  const coordString = coords.map(pt => `${pt.lng},${pt.lat},0`).join(' ')
+  return `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <kml xmlns="http://www.opengis.net/kml/2.2">
+      <Placemark>
+        <name>Selected Area</name>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                ${coordString}
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+    </kml>
+  `.trim()
+}
+
+
   const handleSend = async (e) => {
     e.preventDefault()
     if(!polygonRef.current){
@@ -60,10 +82,8 @@ export default function Quote(){
       const ne = b.getNorthEast(), sw = b.getSouthWest()
       path = [{lat:ne.lat(), lng:ne.lng()}, {lat:sw.lat(), lng:sw.lng()}]
     }
-    const canvas = await html2canvas(mapRef.current, {
-      scale: 0.5 // Reduce resolution by half (adjust as needed)
-    })
-    const map_image = canvas.toDataURL('image/jpeg', 0.6) // Use JPEG + lower quality (0.6 = 60%)
+
+    const kmlData = generateKML(path)
 
     const templateParams = {
       to_email: 'rg_surveys@outlook.com',
@@ -71,9 +91,9 @@ export default function Quote(){
       customer_name: name,
       customer_email: email,
       customer_phone: phone,
-      map_image: map_image,
       message: message,
-      area_coords: JSON.stringify(path, null, 2)
+      area_coords: JSON.stringify(path, null, 2),
+      kml_data: kmlData
     }
 
     setStatus({type:'loading', text:'Sending quote request...'})
