@@ -60,8 +60,10 @@ export default function Quote(){
       const ne = b.getNorthEast(), sw = b.getSouthWest()
       path = [{lat:ne.lat(), lng:ne.lng()}, {lat:sw.lat(), lng:sw.lng()}]
     }
-    const canvas = await html2canvas(mapRef.current)
-    const map_image = canvas.toDataURL('image/png') // This is your screenshot
+    const canvas = await html2canvas(mapRef.current, {
+      scale: 0.5 // Reduce resolution by half (adjust as needed)
+    })
+    const map_image = canvas.toDataURL('image/jpeg', 0.6) // Use JPEG + lower quality (0.6 = 60%)
 
     const templateParams = {
       to_email: 'rg_surveys@outlook.com',
