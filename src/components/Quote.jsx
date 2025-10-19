@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import html2canvas from 'html2canvas'
+
 
 export default function Quote(){
   const mapRef = useRef(null)
@@ -65,6 +67,7 @@ export default function Quote(){
       customer_name: name,
       customer_email: email,
       customer_phone: phone,
+      map_image: map_image,
       message: message,
       area_coords: JSON.stringify(path, null, 2)
     }
@@ -75,6 +78,9 @@ export default function Quote(){
       const SERVICE_ID = 'service_tebbp2b'
       const TEMPLATE_ID = 'template_9lmgupm'
       const PUBLIC_KEY = 'Kvb_o_K93uaQ7-QXg'
+      const canvas = await html2canvas(mapRef.current)
+      const map_image = canvas.toDataURL('image/png') // This is your screenshot
+
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       setStatus({type:'success', text:'Quote request sent — we will contact you shortly.'})
       setName(''); setEmail(''); setPhone(''); setMessage('')
