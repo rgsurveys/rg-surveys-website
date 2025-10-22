@@ -19,8 +19,8 @@ export default function Quote(){
       console.warn('Google Maps script not loaded - ensure API key is set in index.html')
       return
     }
-    const center = { lat: 51.5074, lng: -0.1278 } // default centre (London)
-    const map = new window.google.maps.Map(mapRef.current, { center, zoom: 13 })
+    const center = { lat: 54.6138, lng: -6.4068  } // default centre (Lough Neagh)
+    const map = new window.google.maps.Map(mapRef.current, { center, zoom: 10 })
     const drawingManager = new window.google.maps.drawing.DrawingManager({
       drawingMode: null,
       drawingControl: true,
