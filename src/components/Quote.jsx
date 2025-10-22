@@ -20,7 +20,7 @@ export default function Quote(){
       return
     }
     const center = { lat: 54.6138, lng: -6.4068  } // default centre (Lough Neagh)
-    const map = new window.google.maps.Map(mapRef.current, { center, zoom: 10 })
+    const map = new window.google.maps.Map(mapRef.current, { center, zoom: 8 })
     const drawingManager = new window.google.maps.drawing.DrawingManager({
       drawingMode: null,
       drawingControl: true,
