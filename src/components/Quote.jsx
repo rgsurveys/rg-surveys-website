@@ -86,7 +86,7 @@ export default function Quote(){
     const kmlData = generateKML(path)
 
     const templateParams = {
-      to_email: 'rg_surveys@outlook.com',
+      to_email: 'rg@rgsurvey.com',
       service_type: serviceType,
       customer_name: name,
       customer_email: email,
@@ -99,7 +99,7 @@ export default function Quote(){
     setStatus({type:'loading', text:'Sending quote request...'})
     try{
       // Replace SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY with your EmailJS values
-      const SERVICE_ID = 'service_tebbp2b'
+      const SERVICE_ID = 'service_n141ic7'
       const TEMPLATE_ID = 'template_9lmgupm'
       const PUBLIC_KEY = 'Kvb_o_K93uaQ7-QXg'
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
