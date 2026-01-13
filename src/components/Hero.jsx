@@ -18,7 +18,7 @@ export default function Hero(){
             <ul className="mt-4 text-gray-600 list-disc ml-5">
               <li>Topographical and boundary surveys</li>
               <li>Drone surveys and site mapping</li>
-              <li>Experienced, insured surveyors</li>
+              <li>20 years experience, insured surveyor</li>
             </ul>
           </div>
         </div>
