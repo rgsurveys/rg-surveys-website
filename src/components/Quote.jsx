@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
-import html2canvas from 'html2canvas'
 
 export default function Quote(){
   const mapRef = useRef(null)
